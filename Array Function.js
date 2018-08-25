@@ -1,5 +1,5 @@
 // Example
-var array = ['A', 'B', 'C', 'D', 'E'];
+const array = ['A', 'B', 'C', 'D', 'E'];
 
 // length
 console.log(array.length);
@@ -80,31 +80,30 @@ console.log(array.every(item => item.length === 1));
 // true
 
 // forEach 遍歷陣列(無法終止)(回傳undefined)
-array.forEach(item => console.log(item)),
-  // reduce(處理累加)
-  // array.reduce(callback[accumlator, currentValue, currentIndex, array], initialValue)
-  console.log(array.reduce((prevItem, item) => prevItem + item));
+array.forEach(item => console.log(item));
+// reduce(處理累加)
+// array.reduce(callback[accumlator, currentValue, currentIndex, array], initialValue)
+console.log(array.reduce((prevItem, item) => prevItem + item));
 // "ABCDE"
 
 // More Example...
-{
-  array2 = [2, 3, 4];
-  // 不傳 initialValue
-  console.log(array2.reduce((pre, cur, index, arr) => pre + cur));
-  // 9
 
-  // 傳 initialValue
-  console.log(array2.reduce((pre, cur, index, arr) => pre + cur, 10));
-  // 19
+const array2 = [2, 3, 4];
+// 不傳 initialValue
+console.log(array2.reduce((pre, cur) => pre + cur));
+// 9
 
-  // 求乘積
-  console.log(array2.reduce((pre, cur, index, arr) => pre * cur));
-  // 24
+// 傳 initialValue
+console.log(array2.reduce((pre, cur) => pre + cur, 10));
+// 19
 
-  // 求最大值
-  console.log(array2.reduce((pre, cur, index, arr) => (pre > cur ? pre : cur)));
-  // 4
-}
+// 求乘積
+console.log(array2.reduce((pre, cur) => pre * cur));
+// 24
+
+// 求最大值
+console.log(array2.reduce((pre, cur) => (pre > cur ? pre : cur)));
+// 4
 
 // reduceRight reduce 由右至左
 console.log(array.reduceRight((prevItem, item) => prevItem + item));
